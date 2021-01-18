@@ -1,0 +1,19 @@
+.dislike {
+    transform: rotate(180deg);
+}
+
+.liked{
+    stroke: greenyellow;
+}
+
+.disliked {
+    stroke: red;
+}
+
+.button__like, .button__dislike {
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+    width: 200px;
+    height: 200px;
+}
