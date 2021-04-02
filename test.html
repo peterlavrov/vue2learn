@@ -1,0 +1,42 @@
+<html>
+
+<head>
+  <title>Vue.js test page</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+  <div id="app">
+    <p>Area is equal: {{ area }}</p>
+    <button @click="lenght++">Add lenght</button>
+    <button @click="width++">Add width</button>
+  </div>
+
+  <script type="text/javascript">
+    var app = new Vue({
+      el: "#app",
+      data: {
+        lenght: 5,
+        width: 3
+      },
+      computed: {
+        area: function () {
+          return this.lenght * this.width
+        }
+      },
+      watch: {
+        lenght: function (newVal, oldVal) {
+          console.log('Old lenght value: ' + oldVal + ', new lenght value: ' + newVal)
+        },
+        width: function (newVal, oldVal) {
+          console.log('Old width value: ' + oldVal + ', new width value: ' + newVal)
+        }
+      },
+      beforeUpdate: function () {
+        console.log('this changes happened before the output gets updated.')
+      }
+    })
+  </script>
+</body>
+
+</html>
